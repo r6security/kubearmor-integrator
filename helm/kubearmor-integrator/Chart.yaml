@@ -1,0 +1,8 @@
+apiVersion: v2
+name: KubeArmor-integrator
+description: A Helm chart for KubeArmor Integrator
+
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
+icon: https://r6security.com/wp-content/uploads/2020/06/Phoenix-favicon.png

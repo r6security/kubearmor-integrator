@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: kubearmor-integrator
+  name: kubearmor-integrator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kubearmor-integrator
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: kubearmor-integrator
+    spec:
+      containers:
+      - image: phoenixop/kubearmor-integrator:0.0.1
+        name: kubearmor-integrator
+        imagePullPolicy: Always
+        env:
+        - name: KUBEARMOR_SERVICE
+          value: "{{ .Values.relayServerService }}" 
+{{- if (hasKey .Values "imagePullSecrets") }}
+      imagePullSecrets: 
+{{ toYaml .Values.imagePullSecrets | indent 8 }}
+{{ end }}
+status: {}
