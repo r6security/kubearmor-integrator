@@ -22,7 +22,7 @@ For more details about the Phoenix AMTD operator please visit its [repository](h
 
 ## Help
 
-Phoenix development is coordinated in Discord, feel free to [join](https://discord.gg/dpyAhN73).
+Phoenix development is coordinated in Discord, feel free to [join](https://discord.gg/9t8FXumA).
 
 ## License
 
