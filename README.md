@@ -16,6 +16,10 @@ KubeArmor-integrator requires only one configuration, that is the environment va
 
 For more details about the Phoenix AMTD operator please visit its [repository](https://github.com/r6security/phoenix/).
 
+## RBAC and permissions
+
+The KubeArmor-integrator creates Phoenix `SecurityEvent` resources via the Kubernetes API. When deployed in-cluster it needs a ServiceAccount and RBAC that grants create/get/list/update on `securityevents.amtd.r6security.com` (or the CRD group/resource used by Phoenix) in the namespace(s) where SecurityEvents are written. Restrict to the namespaces where Phoenix and the integrator operate (least privilege). See Phoenix docs for CRD and API group details.
+
 ## Caveats
 
 * The project is in an early stage where the current focus is to be able to provide a proof-of-concept implementation that a wider range of potential users can try out. We are welcome all feedbacks and ideas as we continuously improve the project and introduc new features.
